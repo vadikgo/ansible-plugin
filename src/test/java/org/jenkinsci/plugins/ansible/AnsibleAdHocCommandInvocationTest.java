@@ -151,7 +151,7 @@ public class AnsibleAdHocCommandInvocationTest {
         ArgumentCaptor<ArgumentListBuilder> argument = ArgumentCaptor.forClass(ArgumentListBuilder.class);
         verify(runner).execute(argument.capture(), anyMap());
         assertThat(argument.getValue().toString())
-                .isEqualTo("sshpass ****** /usr/local/bin/ansible localhost -i /tmp/hosts -m ping -f 5 " +
+                .isEqualTo("sshpass -p ****** /usr/local/bin/ansible localhost -i /tmp/hosts -m ping -f 5 " +
                         "-u" +
                         " mylogin -k");
     }
